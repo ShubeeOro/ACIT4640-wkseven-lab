@@ -1,0 +1,4 @@
+﻿"dns_name": "ec2-35-90-234-7.us-west-2.compute.amazonaws.com",
+  "dns_name-2": "ec2-52-10-19-104.us-west-2.compute.amazonaws.com",
+  "public_ip": "35.90.234.7",
+  "public_ip-2": "52.10.19.104"
