@@ -1,6 +1,5 @@
 # intro-to-ansible-lab-files
 
-
 Starter files for the intro to Ansible Lab, 4640.
 
 Read lab instructions on D2L
@@ -39,7 +38,7 @@ The key&apos;s randomart image is:
 </pre>
 
 
-##   - run included scripts to import and delete keys
+## Run the included scripts to import and delete keys
 
 Run the provided script to import said key into our AWS key pair
 
@@ -51,9 +50,9 @@ Run the provided script to import said key into our AWS key pair
 ./scripts/import_lab_key ~/.ssh/aws.pub
 </pre>
 
-## Teraform Commands Run:
+## Teraform Commands:
 
-Run the following to inialize the directory.   
+Run the following to inialize the terraform directory.   
 
 ```
 terraform init
@@ -470,7 +469,6 @@ instance_ip_addr = {
 </pre>
 
 ## Ansible Commands:
-
 
 Update your anisble hosts file with the info from the terraform outputs and update the playbook.yml file to complete the tasks.   
 
