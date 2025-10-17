@@ -12,6 +12,10 @@ By Ahmed, Hanan and Kevin
 
 This command uses ssh gey gen to create a new keypair to be used for this lab
 
+```
+ssh-keygen -t ed25519 -f ~/.ssh/aws -C "acit4640-lab7"
+```
+
 <pre><font color="#26A269"><b>user@Debian13</b></font>:<font color="#12488B"><b>~/Documents/lab7/intro-to-ansible-lab-files</b></font>$ ssh-keygen -t ed25519 -f ~/.ssh/aws -C &quot;acit4640-lab7&quot;
 Generating public/private ed25519 key pair.
 Enter passphrase for &quot;/home/user/.ssh/aws&quot; (empty for no passphrase): 
@@ -37,7 +41,11 @@ The key&apos;s randomart image is:
 
 ##   - run included scripts to import and delete keys
 
-This uses the provided script to import said key into our AWS key storage
+Run the provided script to import said key into our AWS key pair
+
+```
+./scripts/import_lab_key ~/.ssh/aws.pub
+```
 
 <pre><font color="#26A269"><b>user@Debian13</b></font>:<font color="#12488B"><b>~/Documents/lab7/intro-to-ansible-lab-files</b></font>$ 
 ./scripts/import_lab_key ~/.ssh/aws.pub
@@ -45,7 +53,17 @@ This uses the provided script to import said key into our AWS key storage
 
 ## Teraform Commands Run:
 
-I just ran init to inialize the directory. And then apply - auto-approve to run it in its entirity:
+Run the following to inialize the directory.   
+
+```
+terraform init
+```
+
+Then run apply with -auto-approve to run it in its entirity:
+
+```
+terraform apply -auto-approve 
+```
 
 <pre><font color="#26A269"><b>user@Debian13</b></font>:<font color="#12488B"><b>~/Documents/lab7/intro-to-ansible-lab-files</b></font>$ cd terraform
 terraform init
@@ -453,7 +471,20 @@ instance_ip_addr = {
 
 ## Ansible Commands:
 
-Update your anisble hosts with the info from the terraform outputs and update the ansible playbook yml to complete the tasks. Then run this command to run anisble:
+
+Update your anisble hosts file with the info from the terraform outputs and update the playbook.yml file to complete the tasks.   
+
+Check syntax with this command and fix any errors if given   
+
+```
+ansible-playbook --syntax-check playbook.yml
+```
+
+Then run this command to run anisble in the ansible folder:   
+
+```
+ansible-playbook playbook.yml
+```
 
 <pre><font color="#26A269"><b>user@Debian13</b></font>:<font color="#12488B"><b>~/Documents/lab7/intro-to-ansible-lab-files/ansible</b></font>$ ansible-playbook playbook.yml
 
